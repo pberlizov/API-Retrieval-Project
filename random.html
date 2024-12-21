@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Random
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <div class="section">
+            <h2 class = "calendar-title">Are you a spontaenous person who wants to pick an absolutely random event??</h2>
+            <br>
+            <!-- A form for users to generate a random event -->
+            <form action="/random" method="post">
+                <button class="btn-primary" type="submit">Click here</button>
+            </form>
+        </div>
+
+        <!-- Only if they clicked the button, should a random event appear -->
+        {% if event %}
+        <div class="section">
+            <div class="event-info-random">
+                <br>
+                <h1>YOUR EVENT IS...</h1>
+                <h3>{{ event['name']}}</h3>
+                <p><strong>Time:</strong> {{ event.time }}</p>
+                <p><strong>Location:</strong> {{ event.location }}</p>
+                <p><strong>Description:</strong> {{ event.description }}</p>
+                <p><strong>Price:</strong> {{ event.price }}</p>
+            </div>
+            <h1></h1>
+        </div>
+        {% endif %}
+
+    </div>
+{% endblock %}

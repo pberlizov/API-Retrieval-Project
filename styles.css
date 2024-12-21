@@ -1,0 +1,409 @@
+body {
+    font-family: 'Roboto', sans-serif; /* General text */
+}
+
+h1 {
+    font-family: 'Playfair Display', serif; /* Headers */
+}
+
+/* NAVIGATION BAR */
+
+.navbar {
+    border-bottom: 1px solid #ccc;
+    background: #ddccff;
+    color: white;
+    height: 70px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+}
+
+.navbar-logo {
+    height: 100%; /* Adjust the logo height */
+    max-height: 70px; /* Prevent overflow */
+    object-fit: contain; /* Ensures the image fits neatly */
+    display: block;
+}
+
+.nav-link {
+    font-weight: bold;
+    font-family: 'serif', Vollkorn;
+    text-transform: uppercase;
+    margin-right: 20px; /* Spacing between links */
+    color: #4A148C;
+    font-size: 22px;
+}
+
+.nav-link:hover {
+    color: #ffffff; /* Change color on hover */
+    text-decoration: underline;
+}
+
+/* For the toggled menu */
+.navbar-toggler {
+    border-color: white;
+}
+
+.navbar-collapse {
+    text-align: right; /* Aligns text to the right */
+    background-color: #ddccff;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: #ddccff;
+    padding: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    display: flex;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 40px;
+}
+
+  .footer-section-right {
+    border-left:  1px solid #ffffff;
+    text-align: left;
+
+}
+
+.footer-section h3 {
+    font-family: 'Playfair Display', serif; /* Headers */
+    color: #4A148C;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.footer-section a {
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    text-decoration: none;
+    margin-bottom: 5px;
+    display: block;
+
+}
+
+.footer-section a:hover {
+    color: #7756ba;
+}
+
+.footer-section-right p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #ffffff;
+    margin-left: 20px;
+
+}
+
+/* HOMEPAGE */
+
+.hero-section {
+    background-image: url('https://www.shutterstock.com/image-photo/boston-city-skyline-over-charles-600nw-2408399157.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    z-index: 5;
+}
+
+.hero-overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    padding: 20px;
+    border-radius: 8px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(193, 166, 255, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-section h1 {
+    font-size: 6em; /* Adjust for font size */
+    font-weight: bold;
+    margin: 0;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-section .subtitle {
+    font-size: 2.2em;
+    font-style: italic;
+    margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+    color: #f0f0f0;
+}
+
+.hero-section .subtitle2 {
+    font-size: 2.4rem;
+    margin-top: 1rem;
+    font-style: italic;
+    font-family: 'Playfair Display', serif;
+}
+
+.no-events {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: #777;
+    margin-top: 10px;
+}
+
+.homepage-events {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 40px 0;
+    padding: 20px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.events-left {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+}
+
+.events-left h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 4rem;
+    color: #4A148C;
+    margin-bottom: 0px;
+}
+
+.events-list {
+    list-style: none;
+    padding: 0;
+}
+
+.events-right {
+    flex: 2;
+    min-width: 300px;
+
+}
+
+.event-item {
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.event-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem;
+    color: #4A148C; /* Dark purple */
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.event-details {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    color: black;
+    margin: 2px 0;
+}
+
+.btn-primary {
+    background-color: #ddccff;
+    border-color: #4A148C;
+    padding: 12px 24px;
+    color: #4A148C;
+    font-size: 1.1rem;
+    border-radius: 12px;
+}
+
+.btn-primary:hover{
+    background-color: #4A148C;
+    border-color: #ddccff;
+    color: #ddccff;
+}
+
+/* WEEK */
+
+.week {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Automatically adjusts columns */
+    gap: 10px;
+}
+
+.day {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.day h3 {
+    margin: 0;
+    font-size: 1.7em;
+    color: #4A148C;
+    font-family: 'serif', Vollkorn;
+}
+
+.day p.date {
+    margin: 5px 0 15px;
+    font-size: 0.9em;
+    color: #4A148C;
+}
+
+/* Have to give it a seperate event than the calendar, because we don't want the hover price */
+.week-event {
+    margin: 10px 0;
+}
+
+.week-event {
+    margin: 5px 0;
+    font-size: 0.9em;
+    margin-top: 2px;
+    padding: 2px;
+    background-color: #f1ebff;
+    border-radius: 3px;
+}
+
+/* CALENDAR */
+
+
+.calendar {
+    border: 1px solid #ddd;
+}
+
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background-color: #ddccff;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px 0;
+    color: #4A148C;
+    font-family: 'Playfair Display', serif;
+}
+
+.calendar-title {
+    font-family: 'Pacifico', cursive;
+    color: #4A148C;
+    font-size: 4.0em;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    padding: 10px;
+}
+
+.calendar-day {
+    border: 1px solid #eee;
+    min-height: 100px;
+    padding: 5px;
+}
+
+.calendar-day-inactive {
+    background-color: #e1e1e1;
+    color: #999;
+}
+
+.calendar-day-before {
+    background-color: #e6e3e3;
+    color: #999;
+}
+
+.calendar-event-name {
+    font-size: 1.1em;
+    font-family: 'serif', Vollkorn;
+    color: #4A148C;
+    font-weight: bold;
+}
+
+.calendar-day-today {
+    background-color: #e9deff;
+}
+
+.day-number {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #4A148C;
+}
+
+.day-events {
+    font-size: 0.9em;
+}
+
+.event {
+    margin-top: 2px;
+    padding: 2px;
+    background-color: #f1ebff;
+    border-radius: 3px;
+    position: relative;
+    display: inline-block;
+}
+
+.event p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+/* So the price appears on hover for that specific event */
+
+.event::after {
+    content: attr(data-price);
+    position: left;
+    bottom: 100%; /* Positions the tooltip above the event */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4A148C;
+    color: #fff;
+    padding: 5px;
+    border-radius: 4px;
+    white-space: nowrap;
+    font-size: 0.9em;
+    opacity: 0; /* Initially hidden */
+    visibility: hidden; /* Prevents screen readers from reading it */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000; /* Ensures it appears above other elements */
+}
+
+.event:hover::after {
+    opacity: 1; /* Makes the tooltip visible on hover */
+    visibility: visible;
+}
+
+/* RANDOM */
+
+.event-info-random h3{
+    font-family: 'Playfair Display', serif; /* Headers */
+    color: #4A148C;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ffffff;
+    font-size: 58px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 2px #ddccff;
+}
+
+.event-info-random p {
+    font-family: 'Roboto', sans-serif;
+    color: #4A148C;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ffffff;
+    font-size: 22px;
+
+}

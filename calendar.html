@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<!-- Top section, for the title and the buttons to control the months -->
+<div class="container calendar-container">
+    <div class="calendar-header">
+        <form method="POST" class="d-flex justify-content-between align-items-center mb-3">
+            <input type="hidden" name="month" value="{{ current_month|lower|month_to_number }}">
+            <input type="hidden" name="year" value="{{ current_year }}">
+            <button type="submit" name="direction" value="prev" class="btn-primary">
+                Previous Month
+            </button>
+            <h2 class = "calendar-title">{{ current_month }} {{ current_year }}</h2>
+            <button type="submit" name="direction" value="next" class="btn-primary">
+                Next Month
+            </button>
+        </form>
+    </div>
+
+    <!-- For the days of the week -->
+    <div class="calendar">
+        <div class="calendar-weekdays">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+        </div>
+
+        <div class="calendar-grid">
+            {% for day in calendar_days %}
+                <!-- Set the color for each day according to when it occurs -->
+                <div class="calendar-day
+                    {% if not day.is_current_month %}calendar-day-inactive{% endif %}
+                    {% if day.date == today.date() %}calendar-day-today{% endif %}
+                    {% if day.date < today.date() %}calendar-day-before{% endif %}">
+
+                    <div class="day-number">{{ day.date.day }}</div>
+
+                    <!-- Iterate through each event for the day -->
+                    <div class="day-events">
+                        {% for event in day.events %}
+                            <div class="event" data-price="Price: {{ event.price }}">
+                                <small class = "calendar-event-name">{{ event.name }}</small>
+                                <br>
+                                <small><strong>Time: </strong>{{ event.time }}</small>
+                                <br>
+                                <small><strong>Location: </strong>{{ event.location }}</small>
+                                <br>
+                                <small>{{ event.description }}</small>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

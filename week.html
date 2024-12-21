@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Week
+{% endblock %}
+
+{% block main %}
+    <div class="container" class="d-flex justify-content-between align-items-center mb-3">
+        <div class="section">
+            <h2 class = "calendar-title">Events This Week</h2>
+            {% if week_events %}
+
+
+            <div class="week">
+                <!-- Iterate through each day in a week -->
+                {% for day, list in week_events.items() %}
+                <div class="day">
+                    <h3>{{ day }}</h3>
+                    <p class="date">{{ list['date'] }}</p>
+
+                    <!-- Iterate through each event that is going on that day -->
+                    {% if list['events'] %}
+                        {% for event in list['events'] %}
+                        <div class="week-event">
+                            <p class = "calendar-event-name">{{ event['name'] }}</p>
+                            <p><strong>Location: </strong>{{ event['location'] }}</p>
+                            <p><strong>Time: </strong>{{ event['time'] }}</p>
+                            <p><strong>Price: </strong>{{ event['price']}}</p>
+                            <p>{{ event['description'] }}</p>
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <p>No events scheduled.</p>
+                    {% endif %}
+
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <p>No events found for the next week.</p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
