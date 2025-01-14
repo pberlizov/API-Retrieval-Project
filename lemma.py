@@ -3,6 +3,8 @@
 # The backend is set up, similarly to the main project, to extract emails, extract from them numerical sentiment ratings, and then to put them into a database.
 # The next step from this project would be to sort and analyze the sentiment data, and to employ database maintenance techniques to accomplish this goal.
 
+# Need to create token.json, credentials.json for an individual run - use Google Cloud and do not run in a web interface, run in VSCode.
+
 import os
 from datetime import datetime
 from flask import Flask, request
@@ -19,10 +21,9 @@ from typing import List, Dict, Optional
 from ratelimit import limits, sleep_and_retry
 import google.generativeai as genai
 
-# Flask app setup
 app = Flask(__name__)
 
-db_path = "financial_sentiments.db"
+db_path = "financial_sentiments.db" # Need to create this in a real application
 
 # Database initialization
 def initialize_db():
